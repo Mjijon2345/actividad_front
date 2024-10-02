@@ -1,0 +1,15 @@
+img{
+    width: 20px;
+}
+
+.blue{
+    background-color: blue;
+    width: 250px;
+    color: white;
+
+}
+.green{
+    background-color: aqua;
+    width: 250px;
+    
+}

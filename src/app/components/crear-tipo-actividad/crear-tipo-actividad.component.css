@@ -1,0 +1,130 @@
+img{
+    width: 20px;
+}
+
+.blue{
+    background-color: blue;
+    width: 250px;
+    color: white;
+
+}
+.green{
+    background-color: aqua;
+    width: 250px;
+    
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para etiquetas de campo */
+  label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Estilos para campos de entrada de texto */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(50%); /* Invierte el color del icono de calendario */
+    cursor: pointer;
+  }
+  
+  input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border-color: #007bff;
+  }
+  
+  /* Estilos para botones de envío */
+  input[type="submit"],
+  button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover,
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos para botones de opción (radio) */
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  /* Estilos para el área de texto */
+  textarea {
+    resize: vertical;
+  }
+  
+  /* Estilos para mensajes de error */
+  .error-message {
+    color: #ff4444;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  /* Estilos para enlaces dentro del formulario */
+  a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #0056b3;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  select {
+    padding: 10px;
+    font-size: 10px;
+    width: 40%;
+ 
+  }
+  
+  /* Estilo para las opciones */
+  select option {
+    padding: 8px;
+  }
+  
+  /* Estilo cuando el combo box está enfocado */
+  select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }

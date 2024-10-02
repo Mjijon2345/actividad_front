@@ -1,0 +1,258 @@
+img{
+    width: 250px;
+}
+
+.blue{
+    background-color: blue;
+    width: 250px;
+    color: white;
+
+}
+.green{
+    background-color: aqua;
+    width: 250px;
+    
+}
+
+
+.titulo{
+	text-align: center;
+}
+
+
+
+
+
+table {
+	background: #f5f5f5;
+	border-collapse: separate;
+
+	font-size: 14px;
+	line-height: 19px;
+	margin: 30px auto;
+	text-align: left;
+	width: 1000px;
+}	
+
+th {
+	background-color:rgb(211, 92, 12) ;
+	
+	border-top: 1px solid #555;
+	border-bottom: 1px solid #333;
+	box-shadow: inset 0 1px 0 #999;
+	color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+	padding: 10px 15px;
+	position: relative;
+
+}
+
+th:after {
+	background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
+	content: '';
+	display: block;
+	height: 25%;
+	left: 0;
+	margin: 1px 0 0 0;
+	position: absolute;
+	top: 25%;
+	width: 100%;
+	
+}
+
+th:first-child {
+	border-left: 1px solid #777;	
+	box-shadow: inset 1px 1px 0 #999;
+}
+
+th:last-child {
+	box-shadow: inset -1px 1px 0 #999;
+}
+
+td {
+	
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #ffffff;
+	padding: 10px 15px;
+	position: relative;
+	transition: all 300ms;
+	font-size: 14px;
+	line-height: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	
+	color: #000000;
+	
+}
+
+td:first-child {
+	box-shadow: inset 1px 0 0 #fff;
+}	
+
+td:last-child {
+	border-right: 1px solid #e8e8e8;
+	box-shadow: inset -1px 0 0 #fff;
+}	
+
+
+
+tr:last-of-type td {
+	box-shadow: inset 0 -1px 0 #fff; 
+}
+
+tr:last-of-type td:first-child {
+	box-shadow: inset 1px -1px 0 #fff;
+}	
+
+tr:last-of-type td:last-child {
+	box-shadow: inset -1px -1px 0 #fff;
+}	
+
+tbody:hover td {
+	color: transparent;
+	text-shadow: 0 0 3px #aaa;
+}
+
+tbody:hover tr:hover td {
+	color: #444;
+	text-shadow: 0 1px 0 #fff;
+}
+
+
+.pagination{
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.line {
+	
+	text-align: center;
+  }
+
+.inline-section {
+	display: inline-block;
+	margin: 10px; /* Opcional: agrega margen entre las secciones */
+	text-align: center;
+  }
+
+
+
+/* Estilo para los inputs */
+input {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 13px;
+  }
+  
+  /* Estilo para los botones */
+  button {
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	font-size: 12px;
+	cursor: pointer;
+  }
+  
+  /* Cambiar estilo al pasar el cursor sobre los botones */
+  button:hover {
+	background-color: #0056b3;
+  }
+  
+  /* Cambiar estilo al presionar los botones */
+  button:active {
+	background-color: #003d80;
+  }
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+  .floating-dialog {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	padding: 20px;
+	border-radius: 8px;
+	z-index: 1000; /* Asegura que esté por encima de otros elementos */
+	width: 300px; /* Ancho del cuadro de diálogo */
+	max-width: 80%; /* Ancho máximo para que se vea bien en pantallas pequeñas */
+  }
+  
+  /* Estilos para el título del cuadro de diálogo */
+  .floating-dialog .modal-title {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+  }
+  
+  /* Estilos para el contenido del cuadro de diálogo */
+  .floating-dialog .modal-body {
+	font-size: 1rem;
+	line-height: 1.4;
+	margin-bottom: 20px;
+  }
+  
+  /* Estilos para los botones del cuadro de diálogo */
+  .floating-dialog .modal-footer {
+	text-align: right;
+  }
+  
+  .floating-dialog .modal-footer button {
+	margin-left: 10px;
+  }
+  
+ 
+  .floating-dialog .close {
+	position: absolute;
+	top: 5px; /* Ajusta la distancia superior */
+	right: 5px; /* Ajusta la distancia derecha */
+	font-size: 1rem; /* Ajusta el tamaño de la fuente */
+	font-weight: bold;
+	color: #000000; /* Cambia el color del icono de cierre */
+	opacity: 0.7;
+	transition: opacity 0.2s;
+	cursor: pointer;
+  }
+  
+  .floating-dialog .close:hover {
+	opacity: 1;
+	background-color: #ff0000;
+	color: #ffffff; /* Cambia el color del icono de cierre al pasar el ratón por encima */
+  }

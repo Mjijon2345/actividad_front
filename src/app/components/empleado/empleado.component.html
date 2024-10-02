@@ -1,0 +1,109 @@
+
+<h1 class="titulo">Tipo de Actividades</h1>
+<div class="line">
+  <button (click)="navegarAPagina()">Agregar nuevo</button>
+
+  <section class="inline-section">
+    <form action method>
+      <input type="text" id="numero" name="numero"
+        #correo="ngModel" [(ngModel)]="numeroIngresado">
+      <button (click)="onSumbmitID()">Buscar por ID</button>
+    </form>
+  </section>
+
+  <section class="inline-section">
+    <form action method>
+      <input type="text" id="texto" name="texto"
+        #correo="ngModel" [(ngModel)]="textoIngresado">
+
+      <button (click)="onSumbmitText()">Búsqueda Textual</button>
+      <button (click)="getData()">Listar</button>
+    </form>
+
+  </section>
+
+
+
+  <div *ngIf="isConfirmationDialogOpen" class="floating-dialog">
+
+    <div class="modal" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirmar Eliminación</h5>
+            <button type="button" class="close"
+              (click)="closeConfirmationDialog()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ¿Estás seguro de que deseas eliminar este registro?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"
+              (click)="closeConfirmationDialog()">Cancelar</button>
+            <button type="button" class="btn btn-danger"
+              (click)="confirmDeletion()">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div>
+  <table class="rwd-table">
+    <thead>
+      <tr>
+        <th>employee_id </th>
+        <th>person_document </th>
+        <th>person_first_name</th>
+        <th>person_last_name</th>
+        <th>person_direction</th>
+        <th>person_phone</th>
+        <th>employee_email</th>
+        <th>employee_salary</th>
+        <th>Actualizar</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of records; let i=index ">
+       
+        <td> {{ record.employee_id}} </td>
+        <td> {{ record.persona.person_document }} </td>
+        <td> {{ record.persona.person_first_name }} </td>
+        <td> {{ record.persona.person_last_name }} </td>
+        <td> {{ record.persona.person_direction }} </td>
+        <td> {{ record.persona.person_phone }} </td>
+
+
+        <td> {{ record.employee_email }} </td>
+        <td> {{ record.employee_salary }} </td>
+        <td> <button (click)="navegarAPagina2( record.employee_id.toString())">Actualizar</button>
+        </td>
+        <td> <button class="btn btn-danger" (click)="openConfirmationDialog( record.employee_id.toString())">eliminar</button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="estado==true" class="pagination">
+    <button [disabled]="currentPage === 1" (click)="prevPage()">Previous</button>
+    <span>Page {{ currentPage }} of {{ lastPage }}</span>
+    <button [disabled]="currentPage === lastPage" (click)="nextPage()">Next</button>
+  </div>
+
+</div>
+
+

@@ -1,0 +1,35 @@
+<h1>Ingresar nueva actividad:</h1>
+<form (ngSubmit)="onSumbmit()" #viuForm="ngForm">
+    
+   
+    
+
+    <label for="tipo_activity_description">Tipo Activity_description:</label><br>
+    <input type="text" id="tipo_activity_description" name="tipo_activity_description"
+        placeholder="tipo_activity_description"
+        #nombre="ngModel" [(ngModel)]="solicitud.tipo_activity_description"
+        required><br> <br>
+
+    
+
+    <br>
+    <label>
+        <input type="radio"
+            [checked]="estado"
+            (click)="seleccionarOpcion()"> Activa
+    </label>
+
+    <br>
+    <br>
+
+    <label for="consulta">Notas:</label><br>
+    <textarea id="tipo_activity_notes" name="tipo_activity_notes" rows="4"
+        #activity_notes="ngModel" [(ngModel)]="solicitud.tipo_activity_notes"></textarea><br><br>
+
+    <input type="submit" value="Envía"
+        >
+        <button (click)="navegarAPagina()">Cancelar</button>
+
+</form>
+
+

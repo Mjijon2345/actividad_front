@@ -1,0 +1,47 @@
+<h1>Ingresar nueva actividad:</h1>
+<form (ngSubmit)="onSumbmit()" #viuForm="ngForm">
+    
+    <label for="type_activity_id">Type_activity_id:</label><br>
+    <select [(ngModel)]="seleccionado" name="miSelect" (change)="onSeleccionChange($event)">
+        <option *ngFor="let opcion of tipos" value="{{ opcion.type_activity_description }}" >{{ opcion.type_activity_description }}</option>
+    </select>
+   
+    <label for="activity_description">Activity_description:</label><br>
+    <input type="text" id="activity_description" name="activity_description"
+        placeholder="activity_description"
+        #nombre="ngModel" [(ngModel)]="solicitud.activity_description"
+        required><br> <br>
+
+    <label for="activity_duration">Duracion actividad minutos:</label><br>
+    <input type="number" id="activity_duration" name="activity_duration"
+        placeholder="activity_duration"
+        #nombre="ngModel" [(ngModel)]="solicitud.activity_duration"
+        required><br> <br>
+
+    <br>
+    <label for="datePicker">Seleccione una fecha:</label>
+    <input type="datetime-local" id="datePicker" name="datePicker" [(ngModel)]="solicitud.activity_date" />
+    <br>
+
+
+    <br>
+    <label>
+        <input type="radio"
+            [checked]="estado"
+            (click)="seleccionarOpcion()"> Activa
+    </label>
+
+    <br>
+    <br>
+
+    <label for="consulta">Notas:</label><br>
+    <textarea id="activity_notes" name="activity_notes" rows="4"
+        #activity_notes="ngModel" [(ngModel)]="solicitud.activity_notes"></textarea><br><br>
+
+    <input type="submit" value="Envía"
+        >
+        <button (click)="navegarAPagina()">Cancelar</button>
+
+</form>
+
+

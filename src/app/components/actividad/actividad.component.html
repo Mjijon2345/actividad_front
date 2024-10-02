@@ -1,0 +1,101 @@
+
+
+<h1 class="titulo">Actividades</h1>
+<div class="line">
+  <button (click)="navegarAPagina()">Agregar nuevo</button>
+
+  <section class="inline-section">
+    <form action method>
+      <input type="text" id="numero" name="numero"
+        #correo="ngModel" [(ngModel)]="numeroIngresado">
+      <button (click)="onSumbmitID()">Buscar por ID</button>
+    </form>
+  </section>
+
+  <section class="inline-section">
+    <form action method>
+      <input type="text" id="texto" name="texto"
+        #correo="ngModel" [(ngModel)]="textoIngresado">
+
+      <button (click)="onSumbmitText()">Búsqueda Textual</button>
+      <button (click)="getData()">Listar</button>
+    </form>
+
+  </section>
+
+
+
+  <div *ngIf="isConfirmationDialogOpen" class="floating-dialog">
+
+    <div class="modal" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirmar Eliminación</h5>
+            <button type="button" class="close"
+              (click)="closeConfirmationDialog()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ¿Estás seguro de que deseas eliminar este registro?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"
+              (click)="closeConfirmationDialog()">Cancelar</button>
+            <button type="button" class="btn btn-danger"
+              (click)="confirmDeletion()">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div>
+  <table class="rwd-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tipo de Actividad</th>
+        <th>Descripcion</th>
+        <th>Duracion</th>
+        <th>Fecha</th>
+        <th>Notas</th>
+        <th>Actualizar</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of records; let i=index ">
+        <td>{{ record.activity_id }}</td>
+        <td><app-type [type]=record.type></app-type></td>
+        <td> {{ record.activity_description }} </td>
+        <td> {{ record.activity_duration }} </td>
+        <td> {{ record.activity_date }} </td>
+        <td> {{ record.activity_notes }} </td>
+        <td> <button (click)="navegarAPagina2(record.activity_id)">Actualizar</button>
+        </td>
+        <td> <button class="btn btn-danger" (click)="openConfirmationDialog(record.activity_id)">eliminar</button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="estado==true" class="pagination">
+    <button [disabled]="currentPage === 1" (click)="prevPage()">Previous</button>
+    <span>Page {{ currentPage }} of {{ lastPage }}</span>
+    <button [disabled]="currentPage === lastPage" (click)="nextPage()">Next</button>
+  </div>
+
+</div>
